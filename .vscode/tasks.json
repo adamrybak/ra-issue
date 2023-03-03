@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "host start",
+      "group": "build",
+      "type": "func",
+      "command": "host start",
+      "options": { "cwd": "${workspaceFolder}/RaIssue/bin/Debug/net6.0" },
+      "isBackground": true,
+      "dependsOn": "build debug",
+      "problemMatcher": "$func-dotnet-watch"
+    },
+    {
+      "label": "build debug",
+      "group": "build",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["build", "/property:GenerateFullPaths=true", "/consoleloggerparameters:NoSummary"]
+    }
+  ]
+}
